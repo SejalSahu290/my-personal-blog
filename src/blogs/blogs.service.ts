@@ -14,20 +14,16 @@ export class BlogsService {
     return this.blogRepository.find(); 
   }
 
-
   async createBlog(createBlogDto: CreateBlogDto ):  Promise<Blog>{
-    const { username, password } = createBlogDto;
+    const {} = createBlogDto;
 
     const blog = this.blogRepository.create({
-      username,    
-      password
-      
+   
     });
 
     await this.blogRepository.save(blog);
     return blog;
 
-   
   }
 
   async deleteBlog(id: number): Promise<void> {
